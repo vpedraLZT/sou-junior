@@ -1,0 +1,30 @@
+name: Publish Docker image
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+      
+      - name: install gcloud CLI
+        uses: google-github-actions/setup-gcloud@v0
+        with:
+          project_id: ${{secrets.GOOGLE_PROJECT}}
+          service_account_key: ${{secrets.GOOGLE_APPlICATION_CREDENTIALS}}
+          export_default_credentials: true
+
+      - name: Build and push Docker image
+        env:
+          GOOGGLE_PROJECT: ${{secrets.GOOGLE_PROJECT}}
+        run: |
+          gcloud auth configure-docker us-central1-docker.pkg.dev
+          docker build -t us-central1-docker.pkg.dev/healthy-basis-406619/testing-actions/main:latest .
+          docker push us-central1-docker.pkg.dev/healthy-basis-406619/testing-actions/main:latest
+      

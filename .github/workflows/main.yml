@@ -6,7 +6,7 @@ name: Execução do CI/CD GCP
 # documentation.
 
 on:
-  pull_request:
+  push:
     branches: 
      - main
 

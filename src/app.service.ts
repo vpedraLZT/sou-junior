@@ -5,6 +5,7 @@ export class AppService {
   getHello(): string {
     return 'Another one bites the dust';
   }
+  
   wasKannIchFurSieTun(): string {
     return 'Nichts';
   }

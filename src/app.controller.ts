@@ -9,4 +9,8 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+  @Get('deutsch')
+  deutsch(): string {
+    return this.appService.wasKannIchFurSieTun();
+  }
 }

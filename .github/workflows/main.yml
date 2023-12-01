@@ -74,7 +74,20 @@ jobs:
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
-          credentials_json: '${{ secrets.GOOGLE_APPlICATION_CREDENTIALS }}'
+          credentials_json: '{
+  "type": "service_account",
+  "project_id": "sou-junior",
+  "private_key_id": "a596b013433089880b7fdf2aa8f23b243e57db4f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDZOnOmBsIhiwlC\nbcAZM/cNEbsdCsL8kON3pL0thAMMnjJI/Aqk77exGVUg2AGi7L2LjPnR35JukyuP\nUh5/NxyAKGEstSXo3mqwQek/fL98GvQEDdsSqkOkkcwqao7P9AJyUV/zUjHWrkWL\n+WGx3k48DPoIjvT1/in3eiHCy2s5kJXLQbvDxsi53UzU3ZjeLB2ayAQX35wK0odC\nIu/qT6jpx+jlKRyolvMlUNd4IUK1JzNhyHLvVlOneTUIIXvkLW6VPooqsfmtuW8d\nJcRKkWLDZyw46jIHd0qDTIOSRsBfGSruWSU5pM6Osb1im88WH1/FnDr3fcS0DHM0\n9sHWdNiHAgMBAAECggEADBM2uITpp6mt4xZstjnwQra4mv2tJxL6wfzTU0NiVAI7\nM1lnUhHNOTf6RnAbby4Pv0Ef5e2ymxjtM/NRpKqwl+Mmu7B6If6zGYcgaxoJHuH0\nrIEEq33xcqV0Hut7cs3SkP47AjCQeqmHTieXqaZ83NOv1mfz7/Sn6ozMcaKTHEj2\nAw5+jluGTRd3o/fyczIecKY6iyNIUdzbvLbTPKA6n/YyEwEbiMG8jPma+c2ZGWht\nu65ktjC+09ZClgCD5VtxsdeMyS+QdUoQfajFkvhqWBCqTT8ZRb1d5NfJMr0qIkHJ\nq0XCZlJsDljTVpTDLAsl/z/Tot3E+EmyCSlOd6o1SQKBgQDr02L1vdx5oJnJK7Mg\nB5xH8E+1E4dOT+wxnW8wrwOLvSGQadnax/cPyAmS6yAgf18aN+cRFYtcx9zVIx7M\nB7mVBTht63VaDduXTY6hBt3ih8oxmr0rFqgfyfQ8ho0y4YiiWN3vwuwcMBsEa8Iy\n6koAJ3MNNlk1p0YjbQzl7/KKgwKBgQDrz8ecbsFLVLraxGPayXOKa8+Sl7ePWotu\nVrszAf48OJvNZlsYbTglOrGXp1DmIJe9zXbSmIxr1cRCXK0aZu8sUpbTdswSvWoM\n9Kzn1SoY+ErONls6vgczAFeAa8LEadLgEWkaDVOMlFrfg87gNTo16zDqqqCZli3w\nkp+bmpFqrQKBgBcC8oYeN7RamocJz5nRhEt0xKJbvHlEzTxuK1ppyYPKOcs4uPxj\nRNVyZJTEgscJBsOtLsv4+TddfUwC+E9adZ53+vCm6DWYYpQaCk/mNqKTM4Sxn8Hj\nnRY1A7MgQgjz/vwwhb+OmrGJdClzRmjneb8YGl7wrbXRk8ODMZ4CUv13AoGBAJUe\nMKkwtJURgJPE6yw4hhL7eCjIPjCt3kwpFnn8AaxNU+EAoAyDTKTmR9WR3auY4rwI\nyOIFy46JgHFCr8hpXUeW9n/EuOoE06Jbu1djShq+MHfUkb5E2sKarbqs6l5QWSSO\nffsWgEX+rrR3YoQPxL7B+o361lIpUOW3oqzAgsKFAoGALrmB+EqP306R0lgLU0+g\nYmkTGalQX6LfLJ7m5Un48i4Ezr1Qkn3PxTgXyWcT0eb4HmiaRbWdDjfuJrI5M4M2\nwy/ZNRnNCW+Oi+OLi06/xp/Fyd9U7jeMWunhVOM6cW9kjioiWRTBLTWl+LIs2VKQ\nFOYbYn+yVArrci7STA1/0Po=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mestre-dos-mestres@sou-junior.iam.gserviceaccount.com",
+  "client_id": "118343605590509219628",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mestre-dos-mestres%40sou-junior.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}'
+
      
       - name: 'Deploy to Cloud Run'
         uses: 'google-github-actions/deploy-cloudrun@v0'

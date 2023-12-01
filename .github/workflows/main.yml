@@ -12,8 +12,8 @@ on:
 
 # Variáveis de ambiente para ser utilizado nos fluxos
 env:
-  REGISTRY: sou-junior-images
-  SERVICE: sou-junior-api
+  REGISTRY: tem-vaga-mestre-images
+  SERVICE: tem-vaga-mestre-api
   REGION: us-central1
 
 # Jobs são os trabalhos que serão executados neste fluxo

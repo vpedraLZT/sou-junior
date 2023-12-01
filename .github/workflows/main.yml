@@ -39,7 +39,7 @@ jobs:
     # nessa fase podemos usar comandos feitos por empresas ou pessoas
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # aqui vamos usar os comandos criados pela google para instalar o GCLOUD CLI
       - name: install gcloud CLI
         uses: google-github-actions/setup-gcloud@v0
@@ -69,7 +69,7 @@ jobs:
     steps:
 
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
     
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'

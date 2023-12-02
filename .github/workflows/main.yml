@@ -12,8 +12,8 @@ on:
 
 # Variáveis de ambiente para ser utilizado nos fluxos
 env:
-  REGISTRY: tem-vaga-mestre-images
-  SERVICE: tem-vaga-mestre-api
+  REGISTRY: sou-junior # repositorio artifact
+  SERVICE: sou-junior # cloud run
   REGION: us-central1
 
 # Jobs são os trabalhos que serão executados neste fluxo
@@ -56,8 +56,8 @@ jobs:
           # run roda comandos de terminal
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/sou-junior-406812/tem-vaga-mestre-images/main:latest .
-          docker push us-central1-docker.pkg.dev/sou-junior-406812/tem-vaga-mestre-images/main:latest
+          docker build -t us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/main:latest .
+          docker push us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/main:latest
       
 
   deploy-to-gcp-cloud-run:
@@ -81,6 +81,6 @@ jobs:
         
         with:
           service: ${{ env.SERVICE }}
-          image: us-central1-docker.pkg.dev/sou-junior-406812/tem-vaga-mestre-images/main:latest
+          image: us-central1-docker.pkg.dev/sou-junior-406812/sou-junior/main:latest
           region: ${{ env.REGION }}
           

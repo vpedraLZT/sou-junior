@@ -7,6 +7,6 @@ export class AppService {
   }
   
   wasKannIchFurSieTun(): string {
-    return 'Nichts';
+    return 'Nathalia';
   }
 }
